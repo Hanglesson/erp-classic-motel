@@ -1,0 +1,88 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .default-transition {
+    @apply transition-all duration-500 ease-in-out;
+  }
+}
+
+.sidebar {
+  @apply fixed left-0 top-0 h-full w-16 bg-revolver-90 py-1 px-2 z-50 default-transition;
+}
+.sidebar.open {
+  @apply w-64;
+}
+.sidebar .logo-details {
+  @apply h-12 flex items-center relative;
+}
+.sidebar .logo-details .icon {
+  @apply opacity-0 default-transition;
+}
+.sidebar .logo-details .logo_name {
+  @apply text-mercury-40 text-xl font-semibold opacity-0 default-transition;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name {
+  @apply opacity-100;
+}
+.sidebar .logo-details #btn {
+  @apply absolute top-1/2 right-0 translate-y-[-30%] text-2xl default-transition text-center cursor-pointer;
+}
+.sidebar.open .logo-details #btn {
+  @apply text-right;
+}
+.sidebar i {
+  @apply text-mercury-40 h-14 min-w-[50px] text-3xl text-center leading-[60px];
+}
+.sidebar .nav-list {
+  @apply h-full mt-5;
+}
+.sidebar li {
+  @apply relative my-2 mx-0;
+}
+.sidebar li .tooltip {
+  @apply absolute top-[-20px] left-[calc(100%+15px)] z-30 bg-mercury-40 py-2 px-3 shadow-md text-sm opacity-0 pointer-events-none transition-none whitespace-nowrap;
+}
+.sidebar li:hover .tooltip {
+  @apply opacity-100 pointer-events-auto default-transition top-1/2 translate-y-[-50%];
+}
+.sidebar.open li .tooltip {
+  @apply hidden;
+}
+
+.sidebar li a {
+  @apply flex h-full w-full rounded-xl items-center default-transition bg-revolver-90 hover:bg-mercury-40;
+}
+
+.sidebar li a .links_name {
+  @apply text-mercury-40 text-base whitespace-nowrap opacity-0 pointer-events-none duration-500;
+}
+.sidebar.open li a .links_name {
+  @apply opacity-100 pointer-events-auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  @apply default-transition text-revolver-90;
+}
+.sidebar li i {
+  @apply h-[50px] leading-[48px] text-xl rounded-xl;
+}
+.home-section {
+  @apply relative min-h-screen top-0 left-20 w-[calc(100%-78px)] default-transition z-20;
+}
+.sidebar.open ~ .home-section {
+  @apply left-64 w-[calc(100%-256px)];
+}
+.home-section .text {
+  @apply inline-block m-4;
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip {
+    display: none;
+  }
+}
