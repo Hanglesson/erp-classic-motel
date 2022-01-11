@@ -11,6 +11,57 @@
   }
 }
 
+@layer components {
+  .btn {
+    @apply bg-revolver-80 hover:bg-revolver-90 py-2 px-4 rounded-md shadow-sm tracking-wide text-white lg:px-8 cursor-pointer default-transition align-middle text-center h-fit;
+  }
+
+  .btn--sm {
+    @apply py-1 px-2 lg:px-4 text-sm h-fit;
+  }
+
+  .btn--sucess {
+    @apply bg-success-500 hover:bg-success-700;
+  }
+
+  .btn--info {
+    @apply bg-info-500 hover:bg-info-700;
+  }
+
+  .btn--warn {
+    @apply bg-warning-500 hover:bg-warning-600;
+  }
+
+  .btn--danger {
+    @apply bg-danger-500 hover:bg-danger-600;
+  }
+
+  .btn--icon {
+    @apply p-2 inline-flex items-center space-x-2;
+  }
+
+  .svg-icon {
+    @apply default-transition w-6 h-6 fill-current;
+  }
+
+  /* Forms Inputs */
+  .input-group {
+    @apply relative flex items-stretch w-full;
+  }
+  .input-group-prepend {
+    @apply -mr-0.5 flex;
+  }
+  .input-group-text {
+    @apply flex items-center py-2 px-4 mb-0 text-sm
+    text-white text-center whitespace-nowrap bg-revolver-80
+    border border-default-border rounded rounded-r-none;
+  }
+  .form-control {
+    @apply py-2 px-4 text-sm leading-normal text-revolver-90 bg-white border border-default-border focus:outline-none w-full rounded rounded-l-none focus:border-revolver-80;
+    background-clip: padding-box;
+  }
+}
+
 .sidebar {
   @apply fixed left-0 top-0 h-full w-16 bg-revolver-90 py-1 px-2 z-50 default-transition;
 }
